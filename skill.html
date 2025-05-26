@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/sk.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>OUR Skills</h1>
+        <p>we are team work developers</p>
+        <p>Our team excels in a wide range of skills, including front-end development, UI/UX design, and version control. We combine creativity with technical expertise to deliver high-quality solutions, ensuring every project meets modern standards and user expectations.</p>
+        <ul class="skills-list">
+            <li class="skill">
+                <span class="skill-name">HTML</span>
+                <h2>90%</h2>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width: 90%"></div>
+                </div>
+            </li>
+            <li class="skill">
+                <span class="skill-name">CSS</span>
+                <h2>80%</h2>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width: 80%"></div>
+                </div>
+            </li>
+            <li class="skill">
+                <span class="skill-name">JavaScript</span>
+                <h2>65%</h2>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width: 65%"></div>
+                </div>
+            </li>
+            <li class="skill">
+                <span class="skill-name">Photoshop</span>
+                <h2>85%</h2>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width: 85%"></div>
+                </div>
+            </li>
+            <li class="skill">
+                <span class="skill-name">Design UI/UX</span>
+                <h2>75%</h2>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width: 75%"></div>
+                </div>
+            </li>
+            <li class="skill">
+                <span class="skill-name">Git &amp; GitHub</span>
+                <h2>60%</h2>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width: 60%"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // Animate skill bars on load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.skill-bar').forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+    
+</html>

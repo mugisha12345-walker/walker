@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="""en
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/dush.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar" id="sidebar">
+            <h2>Admin</h2>
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">Users</a>
+                <a href="#">Analytics</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="topbar">
+                <button class="menu-btn" id="menuBtn">&#9776;</button>
+                <div class="user">
+                    <img src="../image/adobe23.png" alt="User">
+                    <span>Snake Walker</span>
+                </div>
+            </div>
+            <section class="cards">
+                <div class="card">
+                    <h3>Users</h3>
+                    <span class="number">1,245</span>
+                </div>
+                <div class="card">
+                    <h3>Revenue</h3>
+                    <span class="number">$8,430</span>
+                </div>
+                <div class="card">
+                    <h3>Orders</h3>
+                    <span class="number">320</span>
+                </div>
+                <div class="card">
+                    <h3>Visits</h3>
+                    <span class="number">12,500</span>
+                </div>
+            </section>
+            <section class="table-section">
+                <h3>Recent Users</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Yves Walker</td>
+                            <td>mugishay382@gmail.com</td>
+                            <td>Active</td>
+                            <td>2024-06-01</td>
+                        </tr>
+                        <tr>
+                            <td>Bob Lee</td>
+                            <td>bob@gmail.com</td>
+                            <td>Inactive</td>
+                            <td>2024-05-28</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Doe</td>
+                            <td>jane@example.com</td>
+                            <td>Active</td>
+                            <td>2024-05-25</td>
+                        </tr>
+                        <tr>
+                            <td>Mike Brown</td>
+                            <td>mike@example.com</td>
+                            <td>Active</td>
+                            <td>2024-05-20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+        // Optional: Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if(window.innerWidth <= 900 && sidebar.classList.contains('open')) {
+                if(!sidebar.contains(e.target) && e.target !== menuBtn) {
+                    sidebar.classList.remove('open');
+                }
+            }
+        });
+        const tableBody = document.querySelector('.table-section tbody');
+
+        // Save table data to localStorage
+        function saveTableData() {
+            const rows = Array.from(tableBody.querySelectorAll('tr')).map(row => {
+                return Array.from(row.children).map(cell => cell.textContent);
+            });
+            localStorage.setItem('recentUsers', JSON.stringify(rows));
+        }
+
+        // Load table data from localStorage
+        function loadTableData() {
+            const data = JSON.parse(localStorage.getItem('recentUsers'));
+            if (data) {
+                tableBody.innerHTML = '';
+                data.forEach(rowData => {
+                    const row = document.createElement('tr');
+                    rowData.forEach(cellData => {
+                        const td = document.createElement('td');
+                        td.textContent = cellData;
+                        row.appendChild(td);
+                    });
+                    tableBody.appendChild(row);
+                });
+            }
+        }
+
+        // Save data on page unload
+        window.addEventListener('beforeunload', saveTableData);
+
+        // Load data on page load
+        window.addEventListener('DOMContentLoaded', loadTableData);
+    </script>
+</body>
+<footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2 style="margin:0 0 10px 0;">Snake Walker</h2>
+                    <div class="footer-bottom" style="border:none; padding:0; margin:0; text-align:left; color:#fff; font-size:15px;">
+                        <span>© 2025 Snake Walker. All rights reserved.</span>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <p style="margin:0 0 5px 0;">Follow us on:</p>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                                <img src="../image/kii.png" alt="Facebook">
+                            </a>
+                            <span style="font-size:13px;">TW Developer12</span>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/" target="_blank" rel="noopener">
+                                <img src="../image/Screenshot 2025-05-12 134556.png" alt="Twitter">
+                            </a>
+                            <span style="font-size:13px;">TW Developer12</span>
+                        </li>
+                        <li>
+                            <a href="https://www.github.com/" target="_blank" rel="noopener">
+                                <img src="../image/Screenshot 2025-05-12 122705.png" alt="GitHub">
+                            </a>
+                            <span style="font-size:13px;">Mugisha1234-Walker</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 style="font-size:16px; margin:0 0 8px 0;">Contact Us
+                        <img src="../image/Screenshot 2025-05-12 153722.png" alt="Contact">
+                    </h3>
+                    <p style="font-size:13px; margin:0;">Email: info@snakewalker.com</p>
+                    <p style="font-size:13px; margin:0;">Phone: +123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 Snake Walker. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</html>
