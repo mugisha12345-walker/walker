@@ -1,0 +1,152 @@
+body{
+    background-color: #16177d;
+}
+.box{
+ width: 400px;
+height: 2%;
+ padding: 20px;
+ border: 10px solid black;
+margin: 50px;
+background-color: grey;
+padding-top: 200px;
+ float: 10px;
+ border-radius: 20px;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-family: cursive;
+}
+form{
+    margin-top: -100px;
+    text-align: center;
+    float: 10px;
+}
+label{
+    padding-right: 20px;
+}
+button{
+    background-color: white;
+}
+button:hover{
+    background-color: greenyellow;
+}
+h2{
+    font-family: cursive;
+    color: white;
+    padding-right: -10px;
+}
+.box1{
+    width: 1230px;
+    height: 200px;
+    border: 10px solid black;
+    margin-top: -10px;
+    margin-top: 80px;
+}
+p{
+    text-align: right;
+    font-size: 20px;
+    font-family: cursive;
+}
+.yves{
+    margin-top: -40px;
+    font-family: cursive;
+}
+h2{
+    font-size: 8px;
+}
+h3{
+   font-family:cursive;
+   font-size: 10px;
+   margin-left: 250px;
+   margin-top: -170px; 
+}
+h3 img{
+    width: 20px;
+    height: 10px;
+}
+.ul li a{
+    margin-top: 20px;
+}
+.box2{
+    height: 10px;
+    width: 1200px;
+    background-color: aliceblue;
+}
+footer {
+            background: #111;
+            color: #fff;
+            padding: 40px 0 0 0;
+            font-family: cursive;
+             margin-left: 15px;
+            margin-right: 15px;
+            border-radius: 20px;
+        }
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 10px 20px;
+            border-radius: 10px;
+            background: #181818;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-brand {
+            flex: 1 1 200px;
+        }
+        .footer-social {
+            flex: 1 1 200px;
+            text-align: left;
+        }
+        .footer-social ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            gap: 20px;
+        }
+        .footer-social li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-social img {
+            width: 30px;
+            height: 20px;
+            vertical-align: middle;
+            border-radius: 4px;
+        }
+        .footer-contact {
+            flex: 1 1 200px;
+            text-align: left;
+        }
+        .footer-contact img {
+            width: 20px;
+            height: 10px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 16px;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            color: #aaa;
+        }
+        @media (max-width: 700px) {
+            .footer-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .footer-container {
+                padding: 20px 10px 10px 10px;
+            }
+        }
+     

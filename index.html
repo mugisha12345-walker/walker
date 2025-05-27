@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            margin: 0;
+            background: #16177d;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .loader {
+            border: 8px solid #333;
+            border-top: 8px solid #09f;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }
+        .loading-text {
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+     <div>
+        <div class="loader"></div>
+        <div class="loading-text">Loading, please wait...</div>
+        <h2 >welcome to team  work developers</h2>
+    </div>
+    <a href="../page/index1.html"><button style="display: none;"></button></a>
+</body>
+<script>
+     // Redirect to index.html after 2 seconds
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "../index.html";
+            }, 5000);
+        };
+</script>
+</html>
